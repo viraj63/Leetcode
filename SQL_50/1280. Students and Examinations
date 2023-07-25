@@ -109,3 +109,10 @@ join subjects as u
 left join examinations e on e.student_id= s.student_id and u.subject_name=e.subject_name
 group by s.student_id,u.subject_name
 order by s.student_id,u.subject_name;
+------------------------------------
+Select e2.name from employee e1
+inner join employee e2
+on e1.managerid=e2.id
+where e1.managerid is not null
+group by e1.managerid
+having count(e1.managerid)>=5;
